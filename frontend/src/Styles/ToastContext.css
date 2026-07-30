@@ -1,0 +1,59 @@
+/* ============================================================
+   Toast Notifications — fixed bottom-right stack
+   ============================================================ */
+
+.toast-container {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: 1000;
+}
+
+.toast {
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 0.88rem;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  animation: toastIn 0.25s ease;
+  max-width: 320px;
+}
+
+.toast-success {
+  background-color: var(--color-success);
+}
+
+.toast-error {
+  background-color: var(--color-danger);
+}
+
+.toast-info {
+  background-color: var(--color-primary);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-container {
+    left: var(--space-md);
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+}

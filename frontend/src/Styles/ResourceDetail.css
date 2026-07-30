@@ -1,0 +1,145 @@
+/* ============================================================
+   Resource Detail Page
+   ============================================================ */
+
+.resource-detail-page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: var(--space-md);
+  padding: 0;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.page-status {
+  color: var(--color-text-secondary);
+  padding: var(--space-lg) 0;
+}
+
+.resource-detail-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.resource-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.resource-detail-type {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+.resource-detail-header h1 {
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.resource-detail-location {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.resource-detail-meta {
+  display: flex;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.status-available {
+  color: var(--color-success);
+}
+
+.resource-detail-section {
+  margin-bottom: var(--space-lg);
+}
+
+.resource-detail-section h3 {
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.resource-detail-section p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.no-bookings-text {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.upcoming-bookings-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.upcoming-bookings-list li {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  padding: var(--space-xs) 0;
+}
+
+@media (max-width: 480px) {
+  .resource-detail-card {
+    padding: var(--space-lg);
+  }
+
+  .resource-detail-header {
+    flex-direction: column;
+  }
+
+  .resource-detail-header .btn-primary {
+    width: 100%;
+  }
+}

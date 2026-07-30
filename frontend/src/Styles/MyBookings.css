@@ -1,0 +1,153 @@
+/* ============================================================
+   My Bookings Page
+   ============================================================ */
+
+.bookings-header {
+  margin-bottom: var(--space-lg);
+}
+
+.bookings-header h1 {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.bookings-header p {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+.bookings-filter-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-tab {
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.filter-tab:hover {
+  color: var(--color-text-primary);
+}
+
+.filter-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.bookings-table-wrapper {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.bookings-table th {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  background-color: var(--color-bg);
+}
+
+.bookings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.resource-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.88rem;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+.status-pill {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.status-approved {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.status-rejected {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.status-cancelled {
+  background-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.cancel-btn,
+.view-confirmation-btn {
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  margin-right: var(--space-xs);
+}
+
+.cancel-btn {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.cancel-btn:hover {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.view-confirmation-btn {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.view-confirmation-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}

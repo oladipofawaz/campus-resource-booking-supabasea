@@ -1,0 +1,143 @@
+/* ============================================================
+   Admin Manage Resources
+   ============================================================ */
+
+.resource-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.resource-form h3 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.form-group input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.resource-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+.resources-list-heading {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.admin-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-resource-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.admin-resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-resource-info strong {
+  color: var(--color-text-primary);
+  font-size: 0.92rem;
+}
+
+.admin-resource-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.admin-resource-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.btn-edit,
+.btn-reject {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn-edit:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-reject {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.btn-reject:hover {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

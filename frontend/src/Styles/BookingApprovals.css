@@ -1,0 +1,130 @@
+/* ============================================================
+   Admin Booking Approvals
+   ============================================================ */
+
+.approvals-filter-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 0.83rem;
+  cursor: pointer;
+}
+
+.filter-tab.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.approvals-table-wrapper {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.approvals-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.approvals-table th,
+.approvals-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.86rem;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.approvals-table th {
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.approvals-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.student-email {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.status-pill {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pending { background-color: var(--color-warning-light); color: var(--color-warning); }
+.status-approved { background-color: var(--color-success-light); color: var(--color-success); }
+.status-rejected { background-color: var(--color-danger-light); color: var(--color-danger); }
+.status-cancelled { background-color: var(--color-border); color: var(--color-text-secondary); }
+
+.action-cell {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.btn-approve,
+.btn-reject {
+  border: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-approve {
+  background-color: var(--color-success);
+}
+
+.btn-approve:hover {
+  background-color: #15803d;
+}
+
+.btn-reject {
+  background-color: var(--color-danger);
+}
+
+.btn-reject:hover {
+  background-color: #b91c1c;
+}
+
+.btn-approve:disabled,
+.btn-reject:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.no-action {
+  color: var(--color-text-muted);
+}

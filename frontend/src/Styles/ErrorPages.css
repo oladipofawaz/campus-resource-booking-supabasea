@@ -1,0 +1,48 @@
+/* ============================================================
+   Shared styles for 404 / generic error pages
+   ============================================================ */
+
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.error-code {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.error-page h1 {
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.error-page p {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  max-width: 380px;
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.error-page .btn-primary {
+  padding: 0.65rem 1.4rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.error-page .btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}

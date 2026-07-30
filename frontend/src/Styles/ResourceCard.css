@@ -1,0 +1,88 @@
+/* ============================================================
+   ResourceCard — used in the Resources grid
+   ============================================================ */
+
+.resource-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.resource-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.resource-card-type {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.resource-card-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.resource-card-status.available {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.resource-card-name {
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.resource-card-location,
+.resource-card-capacity {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.resource-card-desc {
+  font-size: 0.83rem;
+  color: var(--color-text-secondary);
+  margin: var(--space-sm) 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.resource-card-book-btn {
+  margin-top: var(--space-sm);
+  padding: 0.6rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.resource-card-book-btn:hover {
+  background-color: var(--color-primary-hover);
+}
