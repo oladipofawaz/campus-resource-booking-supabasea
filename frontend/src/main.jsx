@@ -6,7 +6,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { ToastProvider } from "./context/ToastContext.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
-import "./Styles/variable.css";
+import "./Styles/Variable.css";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
