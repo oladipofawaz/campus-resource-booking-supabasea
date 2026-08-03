@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../styles/ResourceCard.css";
+import "../Styles/ResourceCard.css";
 
 /**
  * Card representing a single bookable resource, used in the
