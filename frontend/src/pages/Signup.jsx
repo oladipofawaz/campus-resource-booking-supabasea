@@ -1,11 +1,15 @@
 import { useState, useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "../Styles/Signup.css";
 
 /**
  * Signup page — redesigned with password strength indicator,
  * show/hide password, and confirm-password validation.
+ *
+ * The "Admin" role option is hidden from the public signup form.
+ * It only appears when the page is visited with ?admin=true in the URL
+ * (e.g. yoursite.com/signup?admin=true), so regular students never see it.
  */
 const Signup = () => {
   const [form, setForm] = useState({
@@ -23,6 +27,8 @@ const Signup = () => {
 
   const { signUp } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const showAdminOption = searchParams.get("admin") === "true";
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -209,7 +215,7 @@ const Signup = () => {
                 onChange={handleChange}
               >
                 <option value="student">Student</option>
-                <option value="admin">Admin</option>
+                {showAdminOption && <option value="admin">Admin</option>}
               </select>
             </div>
 
