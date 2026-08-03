@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import ResourceCard from "../components/ResourceCard";
 import BookingModal from "../components/BookingModal";
@@ -14,9 +15,10 @@ const PAGE_SIZE = 6;
  * campus resources, with pagination and a booking modal.
  */
 const Resources = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [resources, setResources] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
   const [activeType, setActiveType] = useState("All");
   const [page, setPage] = useState(1);
   const [bookingTarget, setBookingTarget] = useState(null);
@@ -33,6 +35,13 @@ const Resources = () => {
     };
     fetchResources();
   }, []);
+
+  // If the URL's ?search= param changes (e.g. from the Topbar search),
+  // sync it into the local search box state.
+  useEffect(() => {
+    const urlSearch = searchParams.get("search") || "";
+    setSearchTerm(urlSearch);
+  }, [searchParams]);
 
   // Unique resource types, used to render filter chips
   const types = useMemo(() => {
@@ -59,6 +68,17 @@ const Resources = () => {
     setPage(1);
   }, [searchTerm, activeType]);
 
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    // Keep the URL in sync so the search is shareable/bookmarkable
+    if (value) {
+      setSearchParams({ search: value });
+    } else {
+      setSearchParams({});
+    }
+  };
+
   return (
     <div className="resources-page">
       <div className="resources-header">
@@ -72,7 +92,7 @@ const Resources = () => {
           className="resources-search"
           placeholder="Search by name or location..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleSearchChange}
         />
 
         <div className="resources-filter-chips">

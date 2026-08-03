@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
@@ -12,10 +13,19 @@ const Topbar = ({ onMenuClick }) => {
   const { profile, signOut } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleLogout = async () => {
     await signOut();
     navigate("/login");
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const trimmed = searchTerm.trim();
+    if (trimmed) {
+      navigate(`/resources?search=${encodeURIComponent(trimmed)}`);
+    }
   };
 
   return (
@@ -24,9 +34,14 @@ const Topbar = ({ onMenuClick }) => {
         <button className="topbar-menu-btn" onClick={onMenuClick} aria-label="Open menu">
           ☰
         </button>
-        <div className="topbar-search">
-          <input type="text" placeholder="Search everywhere..." />
-        </div>
+        <form className="topbar-search" onSubmit={handleSearchSubmit}>
+          <input
+            type="text"
+            placeholder="Search everywhere..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </form>
       </div>
 
       <div className="topbar-right">
